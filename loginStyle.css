@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:colors{
+  --background:#1E293B;
+  --primary:#344465;
+  --forminput:#2E3951;
+  --placeholder:#747F92;
+  --lable:#ffffff9a;
+  --blue:#135BEC;
+}
+--root{
+  --borderRadeCont:12px;
+  --borderRade:8px;
+}
+body{
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
