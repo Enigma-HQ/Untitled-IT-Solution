@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - IT Service Management</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-</head>
-<body>
+  <link rel="shortcut icon" href="images/Icon.svg" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="fontawesome-free-7.0.0-web/css/all.min.css">
+  <link rel="stylesheet" href="CSS/loginStyle.css">
 
+</head>
+
+<body>
+  <div class="form-div">
+    <form action="" method="post">
+      <div class="head">
+        <div><img src="images/Icon.svg" alt=""></div>
+        <h2>IT Service Management Portal</h2>
+        <p>Sign in to your account</p>
+      </div>
+
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input placeholder="Enter your username" type="text" id="username" name="username" required>
+      </div>
+      <div>
+        <label for="password">Password</label>
+
+
+        <div class="pass">
+          <input placeholder="Enter your password" type="password" id="password" name="password" required>
+          <div><i id="passIcon" class="fa-solid fa-eye-slash"></i></div>
+        </div>
+      </div>
+      <button type="submit">Login</button>
+      <a href="http://">
+        <p class="forgot">Forgot Password?</p>
+      </a>
+    </form>
+  </div>
+  <script src="login.js"></script>
 </body>
+
 </html>
