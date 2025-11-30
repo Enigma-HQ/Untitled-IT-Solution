@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --background: #1E293B;
+  --primary: #344465;
+  --forminput: #2E3951;
+  --placeholder: #747F92;
+  --lable: #ffffff9a;
+  --blue: #135BEC;
+  --borderColor: #CED4DA;
+
+  --borderRadeCont: 12px;
+  --borderRade: 8px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  height: 100vh;
+}
+
+.head {
+  gap: 15px;
+  margin: auto 20px auto 20px;
+  cursor: pointer;
+}
+
+.head h4 {
+  margin: auto 0 auto 0;
+  font-weight: 700;
+  font-size: 18px;
+  color: #B7C0D3;
+}
+
+.head img {
+  width: 35px;
+}
+
+#sidebar {
+  min-width: 230px;
+  max-width: 20%;
+  min-height: 100vh;
+  background-color: #232F48;
+  border-right: #E5E7EB 2px solid;
+  padding-top: 14px;
+  position: relative;
+
+}
+
+.sidebar-link {
+  padding: 12px 20px;
+  display: block;
+  text-decoration: none;
+  color: #94A3B8;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0 10px 0 10px;
+  transition: all 0.5s;
+}
+.sidebar-link i{
+  margin-right:5px;
+}
+
+.sidebar-link:hover {
+  background: rgba(19, 91, 236, 0.12);
+  color: var(--blue);
+  border-radius: 16px;
+}
+
+.user {
+  padding: 0 10px 0 10px;
+  gap: 10px;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: block;
+  object-fit: cover;
+}
+
+.userinfo p {
+  margin: 0;
+}
+
+.userinfo {
+  margin: auto;
+}
+
+.username {
+  font-weight: 600;
+  color: #B7C0D3;
+  font-size: 13px;
+}
+
+.mail {
+  color: #6B7280;
+  font-size: 12px;
+}
+
+#butt {
+  width: 90%;
+  padding: 10px 0;
+  background-color: var(--blue);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  border-radius: var(--borderRadeCont);
+  cursor: pointer;
+  margin: 0 5% 0 5%;
+  position: absolute;
+  bottom: 20px;
+  transition: all 0.5s;
+}
+
+.offcanvas #butt{
+  margin: auto !important;
+}
+#mobileSidebar{
+    width: 250px;
+    background-color: #232F48 !important;
+}
+.navbar{
+    background-color: #232F48 !important;
+}
+#butt:hover{
+  background-color: #135beca8;
+}
+main{
+ padding: 15px;
+}
+header h1 {
+color: #FFFFFF;
+font-size: 25px;
+font-weight: bolder;
+margin-bottom: 20px;
+}
+header p {
+color: #5B76AD;
+font-size: 13px;
+font-weight:bold ;
+}
+.row{
+padding:0 10px 0 10px;
+}
+#col{
+background-color: #232F48;
+border: 1px solid #E7EBF3;
+border-radius: 5px;
+height: 100px;
+margin: auto;
+margin-top: 30px;
+
+}
+#col p{
+margin: 0;
+}
+ 
+
+.title{
+color: #92A4C9;
+font-size: 13px;
+}
+.value{
+  font-size:28px;
+  font-weight: bold;
+  color: var(--blue);
+}
