@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Ticket - IT Service Management</title>
+  <link rel="shortcut icon" href="images/Icon.svg" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="fontawesome-free-7.0.0-web/css/all.min.css">
+  <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="CSS/navbar.css">
+  <link rel="stylesheet" href="CSS/creTic.css">
+
+
+
+</head>
+
+<body class="d-flex">
+  <!-- Navbar for mobile & tablet -->
+  <nav class="navbar navbar-dark fixed-top d-lg-none">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="d-flex head">
+        <img src="images/Icon.svg">
+        <h4 class="ms-2">IT Support</h4>
+      </div>
+    </div>
+  </nav>
+ 
+
+
+  <!--Offcanvas Sidebar (mobile / tablet) -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar">
+    <div class="offcanvas-header">
+
+      <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- content copied exactly from your sidebar -->
+      <div class="d-flex head">
+        <img src="images/Icon.svg">
+        <h4 class="ms-2">IT Support</h4>
+      </div>
+
+      <div class="user d-flex mt-3">
+        <img class="profile-pic" src="images/images (1).jpeg">
+        <div class="userinfo ms-2">
+          <p class="username">Abdo Al-Bslf</p>
+          <p class="mail">f01061388@gamil.com</p>
+        </div>
+      </div>
+
+      <a href="index.html" class="sidebar-link"><i class="fa-solid fa-border-all"></i> Dashboard</a>
+      <a href="CreateTicket.html" class="sidebar-link active"><i class="fa-solid fa-plus"></i> Create Ticket</a>
+      <a href="#" class="sidebar-link"><i class="fa-solid fa-ticket"></i> My Ticket</a>
+      <a href="#" class="sidebar-link"><i class="fa-solid fa-book-open"></i> Knowledge Base</a>
+      <a href="#" class="sidebar-link"><i class="fa-solid fa-user"></i> Profile</a>
+
+      <button id="butt">Sign Out</button>
+    </div>
+  </div>
+
+
+  <!-- Sidebar for large screens ONLY -->
+  <div id="sidebar" class="d-none d-lg-block ">
+    <div class="d-flex head">
+      <img src="images/Icon.svg">
+      <h4 class="ms-2">IT Support</h4>
+    </div>
+
+    <div class="user d-flex mt-3">
+      <img class="profile-pic" src="images/images (1).jpeg">
+      <div class="userinfo ms-2">
+        <p class="username">Abdo Al-Bslf</p>
+        <p class="mail">f01061388@gamil.com</p>
+      </div>
+    </div>
+
+    <a href="index.html" class="sidebar-link"><i class="fa-solid fa-border-all"></i> Dashboard</a>
+    <a href="CreateTicket.html" class="sidebar-link active"><i class="fa-solid fa-plus"></i> Create Ticket</a>
+    <a href="#" class="sidebar-link"><i class="fa-solid fa-ticket"></i> My Ticket</a>
+    <a href="#" class="sidebar-link"><i class="fa-solid fa-book-open"></i> Knowledge Base</a>
+    <a href="#" class="sidebar-link"><i class="fa-solid fa-user"></i> Profile</a>
+
+    <button id="butt">Sign Out</button>
+  </div>
+
+  <!-- Main content -->
+  <main class="flex-grow-1 mt-5">
+    <div class="bord">
+      <div class="main">
+        <h2>Create a New Ticket</h2>
+        <div class="div-form">
+          <form>
+
+            <label>Category <span>*</span></label>
+            <select id="category-select" name="category">
+                <option value="" disabled selected hidden>Select a category</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+
+            <label>Title <span>*</span></label>
+            <input type="text" placeholder="Enter a brief summary of the issue">
+
+            <textarea name="" id="" placeholder="Please describe the issue in detail.."></textarea>
+            <hr>
+            <div class=" d-flex justify-content-end">
+              <button type="reset">Cancel</button>
+              <button type="submit">Submit Ticket</button>
+            </div>
+            <form>
+        </div>
+      </div>
+    </div>  
+    
+      
+
+  </main>
+
+
+  <script src="bootstrap-5.3.7-dist/js/popper.min.js"></script>
+  <script src="bootstrap-5.3.7-dist/js/jquery-3.7.1.min.js"></script>
+  <script src="bootstrap-5.3.7-dist/js//bootstrap.js"></script>
+  <script src="javaScript/Createticket.js"></script>
+
+</body>
+
+
+</html>
