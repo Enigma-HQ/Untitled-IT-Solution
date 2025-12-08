@@ -24,6 +24,7 @@
       <div class="input-group">
         <label for="username">Username</label>
         <input placeholder="Enter your username" type="text" id="username" name="username" required>
+        <p class="error">invaled username</p>
       </div>
       <div>
         <label for="password">Password</label>
@@ -32,9 +33,11 @@
         <div class="pass">
           <input placeholder="Enter your password" type="password" id="password" name="password" required>
           <div><i id="passIcon" class="fa-solid fa-eye-slash"></i></div>
+        
         </div>
+          <p class="error">invaled password</p>
       </div>
-      <button type="submit">Login</button>
+      <button type="submit" id="submit-button">Login</button>
       <a href="http://">
         <p class="forgot">Forgot Password?</p>
       </a>

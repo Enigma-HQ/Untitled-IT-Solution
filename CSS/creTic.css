@@ -23,12 +23,13 @@ body {
   background-color: var(--background);
   height: 100vh;
 }
-main{
-  display:flex;
+
+main {
+  display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 40px 0;
-} 
+}
 
 .main {
   display: inline-block;
@@ -39,19 +40,23 @@ main{
   min-width: 600px;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.222);
 }
-.bord{
+
+.bord {
   border: 1px solid var(--borderColor);
   padding: 10px;
   border-radius: 24px;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.222);
 }
-h2{
+
+h2 {
   color: #ffffffda;
   font-size: 28px;
   margin-bottom: 30px;
 }
+
 .main input,
-textarea,select {
+textarea,
+select {
   display: block;
   margin-bottom: 20px;
   width: 100%;
@@ -66,14 +71,17 @@ input::placeholder {
   color: var(--placeholder);
   font-size: 13px;
 }
+
 select {
-    color: var(--placeholder);
-     font-size: 13px;
+  color: var(--placeholder);
+  font-size: 13px;
 }
+
 textarea::placeholder {
   color: var(--placeholder);
   font-size: 13px;
 }
+
 textarea {
   height: 110px;
   resize: none;
