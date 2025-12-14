@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Sending JSON:", ticketData);
 
         // Send to backend
-        fetch("http://localhost:8080/api/create-ticket", {      
+        fetch("http://localhost:3000/api/create-ticket", {      
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
