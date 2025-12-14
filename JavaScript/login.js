@@ -23,26 +23,41 @@ passIcon.onclick = function () {
   }
 };
 
-submbuttom.onclick = function (e) {
+submbuttom.addEventListener("click", function (e) {
   e.preventDefault();
 
-  if (
-    username.value === "" ||
-    password.value === "" ||
-    username.value !== "admin" ||
-    password.value !== "admin"
-  ) {
-    username.style.border = "1px solid red";
-    passdiv.style.border = "1px solid red";
-    document.querySelectorAll(".error")[1].style.display = "block";
-    document.querySelectorAll(".error")[0].style.display = "block";
+  let myRequest = new XMLHttpRequest();
+  myRequest.open("GET", "http://localhost:5500/JavaScript/users.json", true);
+  myRequest.send();
 
-    return;
-  } else if (username.value === "admin" && password.value === "admin") {
-    username.style.border = "1px solid green";
-    passdiv.style.border = "1px solid green";
-    document.querySelectorAll(".error")[1].style.display = "none";
-    document.querySelectorAll(".error")[0].style.display = "none";
-    window.location.href = "index.html";
-  }
-};
+  myRequest.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      let jsData = JSON.parse(this.responseText);
+      let users = jsData.users;
+      let FullData = null;
+
+      for (let i = 0; i < users.length; i++) {
+        if (
+          users[i].username.toLowerCase() ===
+            username.value.trim().toLowerCase() &&
+          users[i].password === password.value.trim()
+        ) {
+          FullData = users[i];
+          break;
+        }
+      }
+
+      if (!FullData) {
+        console.log("Invalid login");
+        username.style.border = "1px solid red";
+        password.style.border = "1px solid red";
+      } else {
+        console.log("Login successful", FullData);
+
+        localStorage.setItem("loggedUser", JSON.stringify(FullData));
+
+        window.location.href = "index.html";
+      }
+    }
+  };
+});

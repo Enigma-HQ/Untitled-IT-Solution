@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "username": "Abdo",
+      "password": "1234",
+      "firstName": "Abdo",
+      "lastName": "Al-Balf",
+      "email": "Abdo@gamil.com",
+      "role": "admin",
+      "tottalTickets": "152",
+      "openTickets": "34",
+      "closedTickets": "118",
+      "prifilePicture": "images/images (1).jpeg"
+    },
+    {
+      "username": "fares01061388567",
+      "password": "01061388567",
+      "firstName": "Fares",
+      "lastName": "Al Asab",
+      "email": "f01061388@gamil.com",
+      "role": "admin",
+      "tottalTickets": "102",
+      "openTickets": "20",
+      "closedTickets": "82",
+      "prifilePicture": "images/channels4_profile.jpg"
+    },
+    {
+   "username": "tamer",
+      "password": "1234",
+      "firstName": "Tamer",
+      "lastName": "El Gayar",
+      "email": "tamer@gamil.com",
+      "role": "admin",
+      "tottalTickets": "50",
+      "openTickets": "20",
+      "closedTickets": "30",
+      "prifilePicture": "images/tamer.png"
+    }
+  ]
+}
