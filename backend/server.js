@@ -1,4 +1,5 @@
 const http = require("http");
+const db = require("./db");
 
 // Server
 
@@ -22,11 +23,25 @@ const server = http.createServer((req, res) => {
         req.on("data", chunk => body += chunk);
         req.on("end", () => {
             const data = JSON.parse(body);
-            console.log("JSON Data Recevied: ", body);
 
-            const response = { message: `Hello, The title of the ticket is: ${data.title}` }
-            res.writeHead(200, {"content-type": "application/json"});
-            res.end(JSON.stringify(response));
+            // Send to DB
+            db.run("INSERT INTO tickets (category, title, description) VALUES (?, ?, ?)", [data.category, data.title, data.description],
+                function(err) {
+                    if (err) {
+                        console.error(err);
+                        res.writeHead(500, { "content-type": "application/json" });
+                        return res.end(JSON.stringify({error: "DB Error"}));
+                    } else {
+                        console.log("Ticket Inserted Successfully");
+                    };
+
+                    console.log("JSON Data Recevied: ", body);
+
+                    const response = { message: `Hello, The title of the ticket is: ${data.title}` }
+                    res.writeHead(200, {"content-type": "application/json"});
+                    res.end(JSON.stringify(response));
+                }
+            );
         })
     }
 
