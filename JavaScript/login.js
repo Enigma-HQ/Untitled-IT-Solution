@@ -50,7 +50,7 @@ submbuttom.addEventListener("click", function (e) {
       if (!FullData) {
         console.log("Invalid login");
         username.style.border = "1px solid red";
-        password.style.border = "1px solid red";
+        passdiv.style.border = "1px solid red";
       } else {
         console.log("Login successful", FullData);
 

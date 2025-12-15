@@ -75,6 +75,7 @@ input::placeholder {
 select {
   color: var(--placeholder);
   font-size: 13px;
+  height: 31px;
 }
 
 textarea::placeholder {

@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - IT Service Management</title>
+  <title>My ticket - IT Service Management</title>
   <link rel="shortcut icon" href="images/Icon.svg" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="fontawesome-free-7.0.0-web/css/all.min.css">
   <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.css">
   <link rel="stylesheet" href="CSS/navbar.css">
-  <link rel="stylesheet" href="CSS/dashboard.css">
+  <link rel="stylesheet" href="CSS/myticket.css">
+
 
 </head>
 
@@ -28,6 +30,7 @@
   </nav>
 
 
+
   <!--Offcanvas Sidebar (mobile / tablet) -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar">
     <div class="offcanvas-header">
@@ -44,19 +47,19 @@
       <div class="user d-flex mt-3">
         <img class="profile-pic" src="images/images (1).jpeg">
         <div class="userinfo ms-2">
-          <p class="username">Abdo Al-Balf</p>
+          <p class="username">Abdo Al-Bslf</p>
           <p class="mail">f01061388@gamil.com</p>
         </div>
       </div>
 
-      <a href="index.html" class="sidebar-link active"><i class="fa-solid fa-border-all"></i> Dashboard</a>
+      <a href="index.html" class="sidebar-link"><i class="fa-solid fa-border-all"></i> Dashboard</a>
       <a href="CreateTicket.html" class="sidebar-link"><i class="fa-solid fa-plus"></i> Create Ticket</a>
-      <a href="myticket.html" class="sidebar-link"><i class="fa-solid fa-ticket"></i> My Ticket</a>
+      <a href="myticket.html" class="sidebar-link active"><i class="fa-solid fa-ticket"></i> My Ticket</a>
       <a href="#" class="sidebar-link"><i class="fa-solid fa-book-open"></i> Knowledge Base</a>
       <a href="#" class="sidebar-link"><i class="fa-solid fa-user"></i> Profile</a>
-         
+
       <a href="login.html">
-  <button id="butt">Sign Out</button>
+        <button id="butt">Sign Out</button>
       </a>
     </div>
   </div>
@@ -77,50 +80,64 @@
       </div>
     </div>
 
-    <a href="index.html" class="sidebar-link active"><i class="fa-solid fa-border-all"></i> Dashboard</a>
-    <a href="CreateTicket.html" class="sidebar-link"><i class="fa-solid fa-plus"></i> Create Ticket</a>
-    <a href="myticket.html" class="sidebar-link"><i class="fa-solid fa-ticket"></i> My Ticket</a>
+    <a href="index.html" class="sidebar-link"><i class="fa-solid fa-border-all"></i> Dashboard</a>
+    <a href="CreateTicket.html" class="sidebar-link "><i class="fa-solid fa-plus"></i> Create Ticket</a>
+    <a href="myticket.html" class="sidebar-link active"><i class="fa-solid fa-ticket"></i> My Ticket</a>
     <a href="#" class="sidebar-link"><i class="fa-solid fa-book-open"></i> Knowledge Base</a>
     <a href="#" class="sidebar-link"><i class="fa-solid fa-user"></i> Profile</a>
 
-        <a href="login.html">
-  <button id="butt">Sign Out</button>
-      </a>
+    <a href="login.html">
+      <button id="butt">Sign Out</button>
+    </a>
   </div>
 
   <!-- Main content -->
-  <main class="flex-grow-1 mt-5">
-    <header class="container-fluid">
-      <h1>Welcome back, Abdo Al-Balf!</h1>
-      <p>Your Quick Overview</p>
-    </header>
-
-    <div class="container"> 
-      <div class="row gap-md-2">
-        <div class="col-lg-3 col-md-6 col-sm-12 " id="col">
-          <p class="title">Total Tickets</p>
-          <p class="value Total">82</p>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12" id="col">
-          <p class="title">Open Tickets</p>
-          <p class="value Open">32</p>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12" id="col">
-          <p class="title">Closed Tickets</p>
-          <p class="value Closed">50</p>
-        </div>
+  <div class="container py-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-start mb-4 flex-wrap gap-3">
+      <div>
+        <h1 class="text-white mb-2">My Ticket Status</h1>
+        <p class="header-subtitle mb-0">Track and manage all your support requests here.</p>
       </div>
-    
+      <a href="CreateTicket.html">
+      <button class="btn btn-primary">
+        <span class="me-2">+</span>
+        Create New Ticket
+      </button>
+    </a>
     </div>
+
+    <!-- Filters -->
+    <div class="d-flex flex-wrap gap-2 mb-4">
+      <button class="btn filter-btn active" data-filter="all">All Tickets (10)</button>
+      <button class="btn filter-btn" data-filter="open">Open</button>
+      <button class="btn filter-btn" data-filter="progress">In Progress</button>
+      <button class="btn filter-btn" data-filter="waiting">Waiting for Support</button>
+      <button class="btn filter-btn" data-filter="resolved">Resolved</button>
+      <button class="btn filter-btn" data-filter="closed">Closed</button>
     </div>
-   
-  </main>
+
+    <!-- Tickets Grid -->
+    <div class="row g-4" id="ticketsGrid"></div>
+
+    <!-- Pagination -->
+    <nav aria-label="Ticket pagination" id="paginationContainer" class="d-none">
+      <ul class="pagination justify-content-center" id="pagination"></ul>
+    </nav>
+
+    <!-- No Tickets Message -->
+    <div class="no-tickets d-none" id="noTickets">
+      No tickets found for this filter.
+    </div>
+  </div>
 
 
   <script src="bootstrap-5.3.7-dist/js/popper.min.js"></script>
   <script src="bootstrap-5.3.7-dist/js/jquery-3.7.1.min.js"></script>
   <script src="bootstrap-5.3.7-dist/js//bootstrap.js"></script>
-  <script src="JavaScript/dashboard.js"></script>
+  <script src="javaScript/myticket.js"></script>
+ 
 </body>
+
 
 </html>

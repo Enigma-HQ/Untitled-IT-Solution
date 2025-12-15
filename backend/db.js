@@ -23,6 +23,4 @@ db.run(`
             console.log("DB is Ready");
         }
     });
-
-
 module.exports = db;
