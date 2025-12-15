@@ -213,9 +213,7 @@ function renderTickets(filter) {
                     '<p class="ticket-info mb-2">Category: ' + ticket.category + '</p>' +
                     '<p class="ticket-info mb-0">Last Updated: ' + ticket.lastUpdated + '</p>' +
                 '</div>' +
-                '<div class="support-message mb-3">' +
-                    '<p>' + ticket.supportMessage + '</p>' +
-                '</div>' +
+    
                 '<div class="d-flex gap-2">' +
                     '<button class="btn btn-primary flex-fill">View Details</button>' +
                     '<button class="btn btn-secondary flex-fill">Add Comment</button>' +
