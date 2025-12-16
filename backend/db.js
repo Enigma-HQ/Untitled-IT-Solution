@@ -1,7 +1,7 @@
 const sqlite = require("sqlite3").verbose();
 
 // Connect to db
-const db = new sqlite.Database("tickets.db", (err) => {
+const db = new sqlite.Database("database.db", (err) => {
     if (err) console.error(err);
     else console.log("DB Created Successfully");
 });
@@ -10,11 +10,14 @@ const db = new sqlite.Database("tickets.db", (err) => {
 
 db.run(`
     CREATE TABLE IF NOT EXISTS tickets (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    category TEXT,
+    id PRIMARY KEY,
     title TEXT,
-    description TEXT,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    status TEXT,
+    statusLabel TEXT,
+    badgeClass TEXT,
+    category TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    description TEXT
     )
     `, (err) => {
         if (err) {

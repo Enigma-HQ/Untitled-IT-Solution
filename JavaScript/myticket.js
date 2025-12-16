@@ -2,108 +2,16 @@ var currentPage = 1;
 var ticketsPerPage = 3;
 var currentFilter = 'all';
 
-const tickets = [
-    {
-        id: 'INC-12345',
-        title: 'Cannot connect to VPN from home office',
-        status: 'open',
-        statusLabel: 'Open',
-        badgeClass: 'badge-open',
-        category: 'Network & Connectivity',
-        lastUpdated: '2 hours ago',
-        supportMessage: 'Support: Investigating server logs...'
-    },
-    {
-        id: 'SRQ-54321',
-        title: 'Printer not responding in the East Wing',
-        status: 'resolved',
-        statusLabel: 'Resolved',
-        badgeClass: 'badge-resolved',
-        category: 'Hardware Support',
-        lastUpdated: 'Yesterday at 4:15 PM',
-        supportMessage: 'Support: Issue resolved, please confirm.'
-    },
-    {
-        id: 'INC-23347',
-        title: 'Software installation request for Figma',
-        status: 'progress',
-        statusLabel: 'In Progress',
-        badgeClass: 'badge-progress',
-        category: 'Software',
-        lastUpdated: '2 days ago',
-        supportMessage: 'You: Attached the approval email.'
-    },
-    {
-        id: 'SRQ-43243',
-        title: 'Reset forgotten password for CRM',
-        status: 'closed',
-        statusLabel: 'Closed',
-        badgeClass: 'badge-closed',
-        category: 'Account Management',
-        lastUpdated: '3 days ago',
-        supportMessage: 'Support: Password has been reset. Please check your email.'
-    },
-    {
-        id: 'INC-87654',
-        title: 'Email client not syncing properly',
-        status: 'open',
-        statusLabel: 'Open',
-        badgeClass: 'badge-open',
-        category: 'Email Support',
-        lastUpdated: '5 hours ago',
-        supportMessage: 'Support: Checking server configuration...'
-    },
-    {
-        id: 'SRQ-99123',
-        title: 'Request access to project management tool',
-        status: 'progress',
-        statusLabel: 'In Progress',
-        badgeClass: 'badge-progress',
-        category: 'Access Management',
-        lastUpdated: '1 day ago',
-        supportMessage: 'Support: Awaiting manager approval.'
-    },
-    {
-        id: 'INC-55667',
-        title: 'Computer running very slow',
-        status: 'waiting',
-        statusLabel: 'Waiting for Support',
-        badgeClass: 'badge-waiting',
-        category: 'Hardware Support',
-        lastUpdated: '3 hours ago',
-        supportMessage: 'You: Provided system specifications.'
-    },
-    {
-        id: 'SRQ-44332',
-        title: 'New employee onboarding - IT equipment',
-        status: 'resolved',
-        statusLabel: 'Resolved',
-        badgeClass: 'badge-resolved',
-        category: 'Onboarding',
-        lastUpdated: '1 week ago',
-        supportMessage: 'Support: All equipment delivered.'
-    },
-    {
-        id: 'INC-22109',
-        title: 'Cannot access shared drive',
-        status: 'open',
-        statusLabel: 'Open',
-        badgeClass: 'badge-open',
-        category: 'Network & Connectivity',
-        lastUpdated: '30 minutes ago',
-        supportMessage: 'Support: Investigating permissions...'
-    },
-    {
-        id: 'SRQ-77889',
-        title: 'Software license renewal',
-        status: 'closed',
-        statusLabel: 'Closed',
-        badgeClass: 'badge-closed',
-        category: 'Software',
-        lastUpdated: '2 weeks ago',
-        supportMessage: 'Support: License renewed successfully.'
-    }
-];
+let tickets = [];
+
+// Fetch
+fetch("http://127.0.0.1:3000/myticket")
+    .then(res => res.json())
+    .then(data => {
+        tickets = data;
+        renderTickets(currentFilter );
+    })
+    .catch(err => console.log("Error fetching from backend: ", err));
 
 function renderPagination(totalTickets) {
     var totalPages = Math.ceil(totalTickets / ticketsPerPage);

@@ -1,11 +1,12 @@
 const http = require("http");
 const db = require("./db");
+const { randomUUID, randomInt } = require("crypto");
 
 // Server
 
 const server = http.createServer((req, res) => {
     
-    // Allow requests from all origins [ZERO CORS PROTECTION !!11!!!!1]
+    // Allow requests from all origins [SCARY !!11!!!!1]
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
@@ -22,10 +23,22 @@ const server = http.createServer((req, res) => {
         
         req.on("data", chunk => body += chunk);
         req.on("end", () => {
-            const data = JSON.parse(body);
-
+            const clientData = JSON.parse(body);
+            
+            const serverData = {
+                // ID Generation
+                id: `${clientData.category} - ${randomInt(10, 10000)}`,
+                title: clientData.title,
+                status: 'open',
+                statusLabel: 'Open',
+                badgeClass: 'badge-open',
+                category: clientData.category,
+                lastUpdated: new Date().toISOString(),
+                body: clientData.body
+            };
+            
             // Send to DB
-            db.run("INSERT INTO tickets (category, title, description) VALUES (?, ?, ?)", [data.category, data.title, data.description],
+            db.run("INSERT INTO tickets (id, title, status, statusLabel, badgeClass, category, description) VALUES (?, ?, ?, ?, ?, ?, ?)", [serverData.id, serverData.title, serverData.status, serverData.statusLabel, serverData.badgeClass, serverData.category, serverData.body],
                 function(err) {
                     if (err) {
                         console.error(err);
@@ -37,12 +50,27 @@ const server = http.createServer((req, res) => {
 
                     console.log("JSON Data Recevied: ", body);
 
-                    const response = { message: `Hello, The title of the ticket is: ${data.title}` }
+                    const response = { message: `Hello, The title of the ticket is: ${clientData.title}` }
                     res.writeHead(200, {"content-type": "application/json"});
                     res.end(JSON.stringify(response));
                 }
             );
         })
+    }
+
+    else if (req.method == "GET" && req.url == "/myticket") {
+        db.all("SELECT * FROM tickets", [], (err, rows) => {
+            if (err){
+                res.setHeader("Content-Type", "application/json");
+                res.statusCode = 500;
+                res.end(JSON.stringify({error: "DB Error"}));
+            } else {
+                res.setHeader("Content-Type", "application/json");
+                res.statusCode = 200;
+                res.end(JSON.stringify(rows));
+            }
+        });
+        
     }
 
     else if (req.method == "GET" && req.url == "/") {
