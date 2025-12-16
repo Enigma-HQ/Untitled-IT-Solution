@@ -1,0 +1,302 @@
+body {
+            background-color: #232F48;
+            color: #e2e8f0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .ticket-container {
+            background-color: #232F48;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .ticket-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .ticket-header h1 {
+            color: #ffffff;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .ticket-subtitle {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .btn-back{
+            background-color: #FFFFFF;
+            color: hsl(216, 15%, 43%);
+            border: none;
+            padding: 0.5rem 1.5rem;
+            font-weight: bold;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition:all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #ffffffd0;
+        }
+
+        .ticket-info-box {
+            background-color: #232F48;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .ticket-title-box {
+            margin-bottom: 1.5rem;
+        }
+
+        .ticket-title-box h2 {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .ticket-id {
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #3d5a73;
+        }
+
+        .info-item h3 {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .badge-status {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .badge-progress {
+            background-color: #f59e0b;
+            color: white;
+        }
+
+        .badge-open {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        .badge-resolved {
+            background-color: #10b981;
+            color: white;
+        }
+
+        .badge-closed {
+            background-color: #6b7280;
+            color: white;
+        }
+
+        .badge-priority {
+            background-color: #ef4444;
+            color: white;
+        }
+
+        .category-text {
+            color: #60a5fa;
+            font-size: 0.9rem;
+        }
+
+        .description-section {
+            padding-top: 1.5rem;
+        }
+
+        .description-section h3 {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+        }
+
+        .description-section p {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .metadata-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .metadata-item h3 {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            margin-bottom: 0.25rem;
+            font-weight: 400;
+        }
+
+        .metadata-item p {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .activity-section {
+            background-color: #2d4a63;
+            border: 1px solid #3d5a73;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .activity-section h2 {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .comment-input-wrapper {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #10b981;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .comment-input {
+            flex: 1;
+        }
+
+        .comment-input textarea {
+            width: 100%;
+            background-color: #1e3a52;
+            border: 1px solid #3d5a73;
+            border-radius: 8px;
+            padding: 0.75rem;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .comment-input textarea::placeholder {
+            color: #64748b;
+        }
+
+        .comment-input textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .btn-add-comment {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            float: right;
+            margin-top: 0.5rem;
+        }
+
+        .btn-add-comment:hover {
+            background-color: #2563eb;
+        }
+
+        .comment-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .comment-content {
+            flex: 1;
+            background-color: #cbd5e1;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .comment-author {
+            color: #1e293b;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .comment-date {
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+
+        .comment-text {
+            color: #334155;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .status-change {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .status-change-icon {
+            color: #94a3b8;
+        }
+
+        .status-change-text {
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        .status-change-text span {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        .status-change-date {
+            color: #64748b;
+            font-size: 0.8rem;
+        }

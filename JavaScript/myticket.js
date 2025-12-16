@@ -9,7 +9,7 @@ fetch("http://127.0.0.1:3000/myticket")
     .then(res => res.json())
     .then(data => {
         tickets = data;
-        renderTickets(currentFilter );
+        renderTickets(currentFilter);
     })
     .catch(err => console.log("Error fetching from backend: ", err));
 
@@ -77,6 +77,21 @@ function renderPagination(totalTickets) {
     }
 }
 
+function viewTicketDetails(ticketId) {
+    // Find the ticket by ID
+    var ticket = tickets.find(function(t) {
+        return t.id === ticketId;
+    });
+    
+    if (ticket) {
+        // Save to localStorage
+        localStorage.setItem('selectedTicket', JSON.stringify(ticket));
+        
+        // Redirect to ticket details page (غير الرابط حسب صفحتك)
+        window.location.href = 'viewdetails.html';
+    }
+}
+
 function renderTickets(filter) {
     if (!filter) filter = 'all';
     currentFilter = filter;
@@ -121,9 +136,8 @@ function renderTickets(filter) {
                     '<p class="ticket-info mb-2">Category: ' + ticket.category + '</p>' +
                     '<p class="ticket-info mb-0">Last Updated: ' + ticket.lastUpdated + '</p>' +
                 '</div>' +
-    
                 '<div class="d-flex gap-2">' +
-                    '<button class="btn btn-primary flex-fill">View Details</button>' +
+                    '<button class="btn btn-primary flex-fill" onclick="viewTicketDetails(\'' + ticket.id + '\')">View Details</button>' +
                     '<button class="btn btn-secondary flex-fill">Add Comment</button>' +
                 '</div>' +
             '</div>' +

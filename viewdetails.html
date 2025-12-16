@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Ticket - IT Service Management</title>
+    <link rel="shortcut icon" href="images/Icon.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="fontawesome-free-7.0.0-web/css/all.min.css">
+    <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="CSS/view.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="ticket-container">
+            <!-- Header -->
+            <div class="ticket-header">
+                <div>
+                    <h1>Ticket Details</h1>
+                    <p class="ticket-subtitle" id="ticketSubtitle">Details for ticket #T20240521</p>
+                </div>
+                <a href="myticket.html" style="text-decoration: none;">
+                    <button class="btn-back">
+                        <i class="fa-solid fa-arrow-left"></i>Back
+                    </button>
+                </a>
+
+            </div>
+
+            <!-- Ticket Info Box -->
+            <div class="ticket-info-box">
+                <div class="ticket-title-box">
+                    <h2 id="ticketTitle">Unable to Access Shared Network Drive</h2>
+                    <p class="ticket-id" id="ticketIdDisplay">Ticket #T20240521</p>
+                </div>
+                <div class="info-grid">
+
+                    <div class="info-item">
+                        <h3>Status</h3>
+                        <span class="badge-status badge-progress" id="ticketStatus">In Progress</span>
+                    </div>
+                    <div class="info-item">
+                        <h3>Priority</h3>
+                        <span class="badge-status badge-priority" id="ticketPriority">High</span>
+                    </div>
+                    <div class="info-item">
+                        <h3>Category</h3>
+                        <p class="category-text" id="ticketCategory">Network</p>
+                    </div>
+                </div>
+                <div class="description-section">
+                    <h3>Description</h3>
+                    <p id="ticketDescription">Users in the marketing department are reporting that they are unable to
+                        access the shared network drive located at //server/marketing. This issue started this morning.
+                        Attempts to manually map the drive result in a 'network path not found' error. This is impacting
+                        their ability to access critical project files.</p>
+                </div>
+            </div>
+
+            <!-- Metadata -->
+            <div class="ticket-info-box">
+                <div class="metadata-grid">
+                    <div class="metadata-item">
+                        <h3>Creation Date</h3>
+                        <p id="ticketCreationDate">May 21, 2024, 08:15 AM</p>
+                    </div>
+                    <div class="metadata-item">
+                        <h3>Assigned To</h3>
+                        <p id="ticketAssignedTo">Jane Doe</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+
+    <script src="bootstrap-5.3.7-dist/js/popper.min.js"></script>
+    <script src="bootstrap-5.3.7-dist/js/jquery-3.7.1.min.js"></script>
+    <script src="bootstrap-5.3.7-dist/js//bootstrap.js"></script>
+    <script src="javaScript/view.js"></script>
+
+</body>
+
+
+</html>
